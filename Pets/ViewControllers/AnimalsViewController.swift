@@ -32,13 +32,10 @@ extension AnimalsViewController {
         animals.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "showAnimal", for: indexPath)
-
         var content = cell.defaultContentConfiguration()
-        
-        
+    
         if let animal = animals[indexPath.row] as? Cat {
             content.text = animal.name
             content.secondaryText = animal.animal
@@ -60,14 +57,11 @@ extension AnimalsViewController {
         }
         
         content.image = UIImage(named: "cat")
-        
         cell.contentConfiguration = content
 
         return cell
     }
     
-
-
     /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -79,7 +73,6 @@ extension AnimalsViewController {
         }
     }
     */
-
 }
 
 // MARK: - UITableViewDelegate

@@ -11,7 +11,6 @@ final class NewAnimalViewController: UIViewController {
 
     @IBOutlet var dataTFStackView: UIStackView!
     @IBOutlet var doneButton: UIButton!
-    
     @IBOutlet var pickerView: UIPickerView!
     
     private let data = ["Cat", "Dog", "Hamster", "Horse", "Goat", "Camel"]
@@ -24,7 +23,6 @@ final class NewAnimalViewController: UIViewController {
         pickerView.dataSource = self
         pickerView.selectRow(2, inComponent: 0, animated: false)
     }
-    
     
     @IBAction func doneButtonTapped() {
         dismiss(animated: true)
