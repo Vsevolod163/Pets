@@ -18,13 +18,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="showAnimal" id="v6C-IX-4cr">
-                                <rect key="frame" x="0.0" y="50" width="430" height="43.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="showAnimal" rowHeight="156" id="v6C-IX-4cr" customClass="PetTableViewCell" customModule="Pets" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="430" height="156"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v6C-IX-4cr" id="0Sd-KH-Epg">
-                                    <rect key="frame" x="0.0" y="0.0" width="430" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="430" height="156"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s7y-ak-gjI">
+                                            <rect key="frame" x="20" y="11" width="192" height="134"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="192" id="B80-VK-130"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <integer key="value" value="15"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzt-JQ-AjF">
+                                            <rect key="frame" x="220" y="0.0" width="202" height="156"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="s7y-ak-gjI" firstAttribute="bottom" secondItem="0Sd-KH-Epg" secondAttribute="bottomMargin" id="6G7-Cj-sSa"/>
+                                        <constraint firstAttribute="trailing" secondItem="tzt-JQ-AjF" secondAttribute="trailing" constant="8" id="aQM-93-W20"/>
+                                        <constraint firstItem="tzt-JQ-AjF" firstAttribute="top" secondItem="0Sd-KH-Epg" secondAttribute="top" id="b9C-4T-A8b"/>
+                                        <constraint firstAttribute="bottom" secondItem="tzt-JQ-AjF" secondAttribute="bottom" id="g67-VI-qNU"/>
+                                        <constraint firstItem="s7y-ak-gjI" firstAttribute="leading" secondItem="0Sd-KH-Epg" secondAttribute="leadingMargin" id="k6k-rg-hY8"/>
+                                        <constraint firstItem="tzt-JQ-AjF" firstAttribute="leading" secondItem="s7y-ak-gjI" secondAttribute="trailing" constant="8" id="mjt-tt-DMh"/>
+                                        <constraint firstItem="s7y-ak-gjI" firstAttribute="top" secondItem="0Sd-KH-Epg" secondAttribute="topMargin" id="xcD-Z4-ZG1"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="tzt-JQ-AjF" id="xxt-cQ-bed"/>
+                                    <outlet property="petImageView" destination="s7y-ak-gjI" id="u52-wL-bXE"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -45,7 +77,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zE6-fo-CGA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-158" y="82"/>
+            <point key="canvasLocation" x="-159.06976744186048" y="81.759656652360519"/>
         </scene>
         <!--Details-->
         <scene sceneID="uwB-H7-VMt">
@@ -123,6 +155,7 @@
                         <outlet property="colorLabel" destination="qX4-u6-C0h" id="6Rl-T4-A4W"/>
                         <outlet property="commandsLabel" destination="WIZ-wY-IgJ" id="o8V-sT-gxG"/>
                         <outlet property="nameLabel" destination="PhJ-cp-wzJ" id="9yz-KD-09I"/>
+                        <outlet property="petImageView" destination="jKT-Nw-zcM" id="gDy-nk-2AS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dzR-Uy-s7Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -159,6 +192,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Done"/>
                                 <connections>
                                     <action selector="doneButtonTapped" destination="ybw-qN-jLm" eventType="touchUpInside" id="Mm1-au-92w"/>
+                                    <segue destination="0ec-xS-YBd" kind="unwind" unwindAction="unwindFor:" id="C6D-bA-yvl"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zpX-N9-PY1">
@@ -221,6 +255,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1fh-BN-2pX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="0ec-xS-YBd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="652.5" y="-240.8450704225352"/>
         </scene>
