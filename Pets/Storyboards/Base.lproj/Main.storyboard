@@ -127,20 +127,10 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0L-e5-Cyi">
-                                <rect key="frame" x="85" y="459" width="150" height="34.5"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Add commands"/>
-                                <connections>
-                                    <action selector="addCommands" destination="0mY-V4-flC" eventType="touchUpInside" id="hSR-ZH-qw6"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bBO-Fm-vdf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="R0L-e5-Cyi" firstAttribute="centerX" secondItem="QA4-zX-Ye8" secondAttribute="centerX" id="3Li-Js-Qpg"/>
-                            <constraint firstItem="R0L-e5-Cyi" firstAttribute="top" secondItem="WIZ-wY-IgJ" secondAttribute="bottom" constant="20" id="Fl2-vh-wNO"/>
                             <constraint firstItem="bBO-Fm-vdf" firstAttribute="trailing" secondItem="WIZ-wY-IgJ" secondAttribute="trailing" constant="16" id="K74-eo-EYn"/>
                             <constraint firstItem="bBO-Fm-vdf" firstAttribute="trailing" secondItem="o70-YR-iwV" secondAttribute="trailing" constant="16" id="QPk-V9-Xed"/>
                             <constraint firstItem="jKT-Nw-zcM" firstAttribute="height" secondItem="QA4-zX-Ye8" secondAttribute="height" multiplier="0.28" id="UrP-qh-RdV"/>
@@ -149,16 +139,14 @@
                             <constraint firstItem="jKT-Nw-zcM" firstAttribute="top" secondItem="bBO-Fm-vdf" secondAttribute="top" constant="8" id="bch-uP-Ynm"/>
                             <constraint firstItem="o70-YR-iwV" firstAttribute="leading" secondItem="bBO-Fm-vdf" secondAttribute="leading" constant="16" id="fbb-MJ-7CW"/>
                             <constraint firstItem="o70-YR-iwV" firstAttribute="top" secondItem="jKT-Nw-zcM" secondAttribute="bottom" constant="20" id="fgp-Fh-1lY"/>
-                            <constraint firstItem="R0L-e5-Cyi" firstAttribute="height" secondItem="QA4-zX-Ye8" secondAttribute="height" multiplier="0.0607394" id="k6H-sl-9vq"/>
                             <constraint firstItem="bBO-Fm-vdf" firstAttribute="trailing" secondItem="jKT-Nw-zcM" secondAttribute="trailing" constant="16" id="nia-bg-yfj"/>
-                            <constraint firstItem="R0L-e5-Cyi" firstAttribute="width" secondItem="QA4-zX-Ye8" secondAttribute="width" multiplier="0.46875" id="peQ-9D-aJw"/>
                             <constraint firstItem="WIZ-wY-IgJ" firstAttribute="top" secondItem="o70-YR-iwV" secondAttribute="bottom" constant="8" id="r8r-Em-Jrf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Details" id="r4U-IS-g7Y">
                         <barButtonItem key="rightBarButtonItem" image="pencil" catalog="system" id="bZ1-Sl-jlN">
                             <connections>
-                                <segue destination="JF4-X8-SbR" kind="presentation" id="l6t-I8-viJ"/>
+                                <action selector="addCommands" destination="0mY-V4-flC" id="QQL-3l-XkU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -174,79 +162,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dzR-Uy-s7Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="652.5" y="461.61971830985914"/>
-        </scene>
-        <!--Edit-->
-        <scene sceneID="dcj-Li-6oR">
-            <objects>
-                <viewController id="GW0-Dc-uBB" customClass="EditViewController" customModule="Pets" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3fO-Cb-dVC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z9C-rA-4sw">
-                                <rect key="frame" x="16" y="314.5" width="288" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="Eet-0W-qN7"/>
-                                </constraints>
-                            </pickerView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tyK-jC-nPa">
-                                <rect key="frame" x="16" y="104.5" width="288" height="202"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="job-B4-cpg">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="shd-dn-ioA">
-                                        <rect key="frame" x="0.0" y="42" width="288" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Color" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TWw-5A-Vbc">
-                                        <rect key="frame" x="0.0" y="84" width="288" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Commands" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qwE-Sf-bZ1">
-                                        <rect key="frame" x="0.0" y="126" width="288" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Photo URL" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fjJ-fj-0r0">
-                                        <rect key="frame" x="0.0" y="168" width="288" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="b1H-49-N8c"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="b1H-49-N8c" firstAttribute="trailing" secondItem="Z9C-rA-4sw" secondAttribute="trailing" constant="16" id="6qT-wr-xir"/>
-                            <constraint firstItem="b1H-49-N8c" firstAttribute="trailing" secondItem="tyK-jC-nPa" secondAttribute="trailing" constant="16" id="9zd-0d-EZB"/>
-                            <constraint firstItem="Z9C-rA-4sw" firstAttribute="leading" secondItem="b1H-49-N8c" secondAttribute="leading" constant="16" id="NaU-cF-IYK"/>
-                            <constraint firstItem="Z9C-rA-4sw" firstAttribute="top" secondItem="tyK-jC-nPa" secondAttribute="bottom" constant="8" id="dos-k7-Ope"/>
-                            <constraint firstItem="tyK-jC-nPa" firstAttribute="leading" secondItem="b1H-49-N8c" secondAttribute="leading" constant="16" id="o6O-OJ-MWb"/>
-                            <constraint firstItem="tyK-jC-nPa" firstAttribute="top" secondItem="b1H-49-N8c" secondAttribute="top" id="sjG-2K-aLK"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Edit" id="IzB-iC-bmH">
-                        <barButtonItem key="leftBarButtonItem" image="chevron.down" catalog="system" id="9F4-U9-vKj"/>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="YUF-xN-4Wv"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="ageTF" destination="shd-dn-ioA" id="hnu-v7-mLu"/>
-                        <outlet property="animalPikerView" destination="Z9C-rA-4sw" id="mfl-ck-Gl7"/>
-                        <outlet property="colorTF" destination="TWw-5A-Vbc" id="GWe-6d-aYs"/>
-                        <outlet property="commandsTF" destination="qwE-Sf-bZ1" id="gBK-tc-LfY"/>
-                        <outlet property="nameTF" destination="job-B4-cpg" id="UEe-m8-s20"/>
-                        <outlet property="photoTF" destination="fjJ-fj-0r0" id="wme-R4-Jdb"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SWe-M0-MqN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2145" y="462"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="O9t-Br-HjL">
@@ -345,28 +260,9 @@
             </objects>
             <point key="canvasLocation" x="652.5" y="-240.8450704225352"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Ehv-ba-zhZ">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JF4-X8-SbR" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="U7C-GD-Y5o">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="104.5"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="GW0-Dc-uBB" kind="relationship" relationship="rootViewController" id="0DY-dc-Xgf"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tPf-Ra-n83" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1413" y="462"/>
-        </scene>
     </scenes>
     <resources>
         <image name="cat" width="1150" height="647"/>
-        <image name="chevron.down" catalog="system" width="128" height="70"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">

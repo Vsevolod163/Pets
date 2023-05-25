@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		C66094FE2A1F727B00A21E47 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C66094FD2A1F727B00A21E47 /* Kingfisher */; };
 		C66095012A1F760700A21E47 /* PetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66095002A1F760700A21E47 /* PetTableViewCell.swift */; };
-		C66095032A1FB71800A21E47 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66095022A1FB71800A21E47 /* EditViewController.swift */; };
 		C69D3ACD2A1E9EB7001C2825 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69D3ACC2A1E9EB7001C2825 /* AppDelegate.swift */; };
 		C69D3ACF2A1E9EB7001C2825 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69D3ACE2A1E9EB7001C2825 /* SceneDelegate.swift */; };
 		C69D3AD42A1E9EB7001C2825 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C69D3AD22A1E9EB7001C2825 /* Main.storyboard */; };
@@ -25,7 +24,6 @@
 
 /* Begin PBXFileReference section */
 		C66095002A1F760700A21E47 /* PetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTableViewCell.swift; sourceTree = "<group>"; };
-		C66095022A1FB71800A21E47 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		C69D3AC92A1E9EB7001C2825 /* Pets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C69D3ACC2A1E9EB7001C2825 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C69D3ACE2A1E9EB7001C2825 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,7 +122,6 @@
 				C69D3AED2A1EAF39001C2825 /* AnimalsViewController.swift */,
 				C69D3AEF2A1EAF59001C2825 /* DetailAnimalViewController.swift */,
 				C69D3AF12A1EB3EC001C2825 /* NewAnimalViewController.swift */,
-				C66095022A1FB71800A21E47 /* EditViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -224,7 +221,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C66095032A1FB71800A21E47 /* EditViewController.swift in Sources */,
 				C69D3AF02A1EAF59001C2825 /* DetailAnimalViewController.swift in Sources */,
 				C69D3AEE2A1EAF39001C2825 /* AnimalsViewController.swift in Sources */,
 				C69D3AEC2A1EA348001C2825 /* Animal.swift in Sources */,

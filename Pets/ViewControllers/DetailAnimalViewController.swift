@@ -44,13 +44,6 @@ final class DetailAnimalViewController: UIViewController {
         petImageView.kf.setImage(with: imageURL)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let navigationVC = segue.destination as? UINavigationController else { return}
-        guard let editVC = navigationVC.topViewController as? EditViewController else { return }
-        
-        editVC.animal = animal
-    }
-    
     @IBAction func addCommands() {
         showAlert(with: "Add commands", and: "What commands do you want to add?")
     }
