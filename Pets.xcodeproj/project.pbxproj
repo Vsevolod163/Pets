@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C66094FE2A1F727B00A21E47 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C66094FD2A1F727B00A21E47 /* Kingfisher */; };
+		C66095012A1F760700A21E47 /* PetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66095002A1F760700A21E47 /* PetTableViewCell.swift */; };
 		C69D3ACD2A1E9EB7001C2825 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69D3ACC2A1E9EB7001C2825 /* AppDelegate.swift */; };
 		C69D3ACF2A1E9EB7001C2825 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69D3ACE2A1E9EB7001C2825 /* SceneDelegate.swift */; };
 		C69D3AD42A1E9EB7001C2825 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C69D3AD22A1E9EB7001C2825 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C66095002A1F760700A21E47 /* PetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTableViewCell.swift; sourceTree = "<group>"; };
 		C69D3AC92A1E9EB7001C2825 /* Pets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C69D3ACC2A1E9EB7001C2825 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C69D3ACE2A1E9EB7001C2825 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C66094FF2A1F75EE00A21E47 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C66095002A1F760700A21E47 /* PetTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C69D3AC02A1E9EB7001C2825 = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +78,7 @@
 		C69D3ACB2A1E9EB7001C2825 /* Pets */ = {
 			isa = PBXGroup;
 			children = (
+				C66094FF2A1F75EE00A21E47 /* Views */,
 				C69D3AE42A1E9F87001C2825 /* Models */,
 				C69D3AE32A1E9F80001C2825 /* ViewControllers */,
 				C69D3AE22A1E9F79001C2825 /* Storyboards */,
@@ -215,6 +226,7 @@
 				C69D3AEC2A1EA348001C2825 /* Animal.swift in Sources */,
 				C69D3AF22A1EB3EC001C2825 /* NewAnimalViewController.swift in Sources */,
 				C69D3ACD2A1E9EB7001C2825 /* AppDelegate.swift in Sources */,
+				C66095012A1F760700A21E47 /* PetTableViewCell.swift in Sources */,
 				C69D3ACF2A1E9EB7001C2825 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
