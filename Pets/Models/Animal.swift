@@ -6,11 +6,11 @@
 //
 
 class Animal {
-    var name: String
-    var age: String
-    var color: String
+    let name: String
+    let age: String
+    let color: String
     var commands: String
-    var photo: String
+    let photo: String
     
     init(name: String, age: String, color: String, commands: String, photo: String) {
         self.name = name
