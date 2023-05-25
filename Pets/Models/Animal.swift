@@ -22,11 +22,11 @@ class Animal {
 }
 
 class PackAnimal: Animal {
-    private let type = "Pack"
+    let type = "Pack"
 }
 
 class HomeAnimal: Animal {
-    private let type = "Home"
+    let type = "Home"
 }
 
 final class Horse: PackAnimal {

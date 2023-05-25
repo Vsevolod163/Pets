@@ -11,8 +11,10 @@ import Kingfisher
 final class AnimalsViewController: UITableViewController {
     
     private var animals = [
-        Horse(name: "Vasiliy", age: "2", color: "Gray", commands: "Forward, Play", photo: "https://miratorg.ru/upload/resize_cache/iblock/da5/770_513_1/horse.jpg"),
-        Cat(name: "Lora", age: "1", color: "White", commands: "Eat", photo: "https://www.purina.ru/sites/default/files/2021-10/britanskaya-3.jpg")
+        [
+        ],
+        [
+        ]
     ]
     
     override func viewDidLoad() {
@@ -29,30 +31,56 @@ final class AnimalsViewController: UITableViewController {
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
         guard let newAnimalVC = segue.source as? NewAnimalViewController else { return }
+        guard let animal = newAnimalVC.animal else { return }
         
-        animals.append(newAnimalVC.animal)
-        tableView.insertRows(at: [IndexPath(row: animals.count - 1, section: 0)], with: .automatic)
+        var section = 0
+        
+        if animal is HomeAnimal {
+            animals[0].append(animal)
+            section = 0
+        } else if animal is PackAnimal {
+            animals[1].append(animal)
+            section = 1
+        }
+
+        tableView.insertRows(at: [IndexPath(row: animals[section].count - 1, section: section)], with: .automatic)
     }
 }
 // MARK: - TableViewDataSource
 extension AnimalsViewController {
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         animals.count
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        animals[section].count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "showAnimal", for: indexPath)
         guard let cell = cell as? PetTableViewCell else { return UITableViewCell() }
         
-        let animal = animals[indexPath.row]
-        cell.configure(with: animal)
+        if !animals.isEmpty {
+            guard let animal = animals[indexPath.section][indexPath.row] as? Animal else { return UITableViewCell() }
+            cell.configure(with: animal)
+        }
 
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if animals[section].first is PackAnimal {
+            return "Pack Animals"
+        } else if animals[section].first is HomeAnimal {
+            return "Home Animals"
+        }
+        
+        return ""
+    }
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            animals.remove(at: indexPath.row)
+            animals[indexPath.section].remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
@@ -63,6 +91,6 @@ extension AnimalsViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        performSegue(withIdentifier: "showAnimal", sender: animals[indexPath.row])
+        performSegue(withIdentifier: "showAnimal", sender: animals[indexPath.section][indexPath.row])
     }
 }
