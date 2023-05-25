@@ -9,7 +9,7 @@ import UIKit
 
 final class AnimalsViewController: UITableViewController {
     
-    private let animals = [
+    private var animals = [
         Horse(name: "Vasiliy", age: 2, color: "Gray", commands: ["Forward", "Play"]),
         Cat(name: "Lora", age: 2, color: "White", commands: ["Eat"])
     ]
@@ -62,17 +62,13 @@ extension AnimalsViewController {
         return cell
     }
     
-    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            animals.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
-    */
 }
 
 // MARK: - UITableViewDelegate
