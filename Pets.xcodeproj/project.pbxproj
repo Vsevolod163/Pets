@@ -9,25 +9,29 @@
 /* Begin PBXBuildFile section */
 		C69D3ACD2A1E9EB7001C2825 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69D3ACC2A1E9EB7001C2825 /* AppDelegate.swift */; };
 		C69D3ACF2A1E9EB7001C2825 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69D3ACE2A1E9EB7001C2825 /* SceneDelegate.swift */; };
-		C69D3AD12A1E9EB7001C2825 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69D3AD02A1E9EB7001C2825 /* ViewController.swift */; };
 		C69D3AD42A1E9EB7001C2825 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C69D3AD22A1E9EB7001C2825 /* Main.storyboard */; };
 		C69D3AD62A1E9EB8001C2825 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C69D3AD52A1E9EB8001C2825 /* Assets.xcassets */; };
 		C69D3AD92A1E9EB8001C2825 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C69D3AD72A1E9EB8001C2825 /* LaunchScreen.storyboard */; };
 		C69D3AE82A1EA169001C2825 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = C69D3AE72A1EA169001C2825 /* Realm */; };
 		C69D3AEA2A1EA169001C2825 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C69D3AE92A1EA169001C2825 /* RealmSwift */; };
 		C69D3AEC2A1EA348001C2825 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69D3AEB2A1EA348001C2825 /* Animal.swift */; };
+		C69D3AEE2A1EAF39001C2825 /* AnimalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69D3AED2A1EAF39001C2825 /* AnimalsViewController.swift */; };
+		C69D3AF02A1EAF59001C2825 /* DetailAnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69D3AEF2A1EAF59001C2825 /* DetailAnimalViewController.swift */; };
+		C69D3AF22A1EB3EC001C2825 /* NewAnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69D3AF12A1EB3EC001C2825 /* NewAnimalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C69D3AC92A1E9EB7001C2825 /* Pets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C69D3ACC2A1E9EB7001C2825 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C69D3ACE2A1E9EB7001C2825 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C69D3AD02A1E9EB7001C2825 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C69D3AD32A1E9EB7001C2825 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C69D3AD52A1E9EB8001C2825 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C69D3AD82A1E9EB8001C2825 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C69D3ADA2A1E9EB8001C2825 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C69D3AEB2A1EA348001C2825 /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
+		C69D3AED2A1EAF39001C2825 /* AnimalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsViewController.swift; sourceTree = "<group>"; };
+		C69D3AEF2A1EAF59001C2825 /* DetailAnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAnimalViewController.swift; sourceTree = "<group>"; };
+		C69D3AF12A1EB3EC001C2825 /* NewAnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAnimalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +106,9 @@
 		C69D3AE32A1E9F80001C2825 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C69D3AD02A1E9EB7001C2825 /* ViewController.swift */,
+				C69D3AED2A1EAF39001C2825 /* AnimalsViewController.swift */,
+				C69D3AEF2A1EAF59001C2825 /* DetailAnimalViewController.swift */,
+				C69D3AF12A1EB3EC001C2825 /* NewAnimalViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -200,8 +206,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C69D3AD12A1E9EB7001C2825 /* ViewController.swift in Sources */,
+				C69D3AF02A1EAF59001C2825 /* DetailAnimalViewController.swift in Sources */,
+				C69D3AEE2A1EAF39001C2825 /* AnimalsViewController.swift in Sources */,
 				C69D3AEC2A1EA348001C2825 /* Animal.swift in Sources */,
+				C69D3AF22A1EB3EC001C2825 /* NewAnimalViewController.swift in Sources */,
 				C69D3ACD2A1E9EB7001C2825 /* AppDelegate.swift in Sources */,
 				C69D3ACF2A1E9EB7001C2825 /* SceneDelegate.swift in Sources */,
 			);
@@ -358,6 +366,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -389,6 +398,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
