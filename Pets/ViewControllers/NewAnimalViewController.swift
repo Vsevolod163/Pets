@@ -53,52 +53,52 @@ final class NewAnimalViewController: UIViewController {
         
         if chosenAnimal == "Cat" {
             animal = Cat(
-                name: subviews[0].text ?? "",
-                age: subviews[1].text ?? "",
-                color: subviews[2].text ?? "",
-                commands: subviews[3].text ?? "",
-                photo: subviews[4].text ?? ""
+                animalName: subviews[0].text ?? "",
+                animalAge: subviews[1].text ?? "",
+                animalColor: subviews[2].text ?? "",
+                animalCommands: subviews[3].text ?? "",
+                animalPhoto: subviews[4].text ?? ""
             )
         } else if chosenAnimal == "Dog" {
             animal = Dog(
-                name: subviews[0].text ?? "",
-                age: subviews[1].text ?? "",
-                color: subviews[2].text ?? "",
-                commands: subviews[3].text ?? "",
-                photo: subviews[4].text ?? ""
+                animalName: subviews[0].text ?? "",
+                animalAge: subviews[1].text ?? "",
+                animalColor: subviews[2].text ?? "",
+                animalCommands: subviews[3].text ?? "",
+                animalPhoto: subviews[4].text ?? ""
             )
             print(1)
         } else if chosenAnimal == "Hamster" {
             animal = Hamster(
-                name: subviews[0].text ?? "",
-                age: subviews[1].text ?? "",
-                color: subviews[2].text ?? "",
-                commands: subviews[3].text ?? "",
-                photo: subviews[4].text ?? ""
+                animalName: subviews[0].text ?? "",
+                animalAge: subviews[1].text ?? "",
+                animalColor: subviews[2].text ?? "",
+                animalCommands: subviews[3].text ?? "",
+                animalPhoto: subviews[4].text ?? ""
             )
         } else if chosenAnimal == "Horse" {
             animal = Horse(
-                name: subviews[0].text ?? "",
-                age: subviews[1].text ?? "",
-                color: subviews[2].text ?? "",
-                commands: subviews[3].text ?? "",
-                photo: subviews[4].text ?? ""
+                animalName: subviews[0].text ?? "",
+                animalAge: subviews[1].text ?? "",
+                animalColor: subviews[2].text ?? "",
+                animalCommands: subviews[3].text ?? "",
+                animalPhoto: subviews[4].text ?? ""
             )
         } else if chosenAnimal == "Goat" {
             animal = Goat(
-                name: subviews[0].text ?? "",
-                age: subviews[1].text ?? "",
-                color: subviews[2].text ?? "",
-                commands: subviews[3].text ?? "",
-                photo: subviews[4].text ?? ""
+                animalName: subviews[0].text ?? "",
+                animalAge: subviews[1].text ?? "",
+                animalColor: subviews[2].text ?? "",
+                animalCommands: subviews[3].text ?? "",
+                animalPhoto: subviews[4].text ?? ""
             )
         } else if chosenAnimal == "Camel" {
             animal = Camel(
-                name: subviews[0].text ?? "",
-                age: subviews[1].text ?? "",
-                color: subviews[2].text ?? "",
-                commands: subviews[3].text ?? "",
-                photo: subviews[4].text ?? ""
+                animalName: subviews[0].text ?? "",
+                animalAge: subviews[1].text ?? "",
+                animalColor: subviews[2].text ?? "",
+                animalCommands: subviews[3].text ?? "",
+                animalPhoto: subviews[4].text ?? ""
             )
         }
         
