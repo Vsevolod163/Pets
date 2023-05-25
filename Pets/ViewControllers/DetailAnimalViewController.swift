@@ -43,4 +43,31 @@ final class DetailAnimalViewController: UIViewController {
         commandsLabel.text = "Commands: \(animal.commands)"
         petImageView.kf.setImage(with: imageURL)
     }
+    
+    @IBAction func addCommands() {
+        showAlert(with: "Add commands", and: "What commands do you want to add?")
+    }
+    
+    private func showAlert(with title: String, and message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+
+        alert.addTextField()
+        
+        let saveAction = UIAlertAction(title: "Save", style: .default) { [weak self] _ in
+            guard let commands = alert.textFields?.first?.text else { return }
+            guard !commands.isEmpty else { return }
+            
+            self?.animal.commands += ", \(commands)"
+            self?.commandsLabel.text = "Commands: \(self?.animal.commands ?? "")"
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { [weak self] _ in
+            self?.dismiss(animated: true)
+        }
+        
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true)
+    }
 }

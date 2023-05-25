@@ -130,7 +130,10 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0L-e5-Cyi">
                                 <rect key="frame" x="114.33333333333333" y="604.33333333333337" width="201.33333333333337" height="56.666666666666629"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Edit"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add commands"/>
+                                <connections>
+                                    <action selector="addCommands" destination="0mY-V4-flC" eventType="touchUpInside" id="hSR-ZH-qw6"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bBO-Fm-vdf"/>

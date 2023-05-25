@@ -10,12 +10,7 @@ import Kingfisher
 
 final class AnimalsViewController: UITableViewController {
     
-    private var animals = [
-        [
-        ],
-        [
-        ]
-    ]
+    private var animals: [[Animal]] = Array(repeating: [], count: 2)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +56,7 @@ extension AnimalsViewController {
         guard let cell = cell as? PetTableViewCell else { return UITableViewCell() }
         
         if !animals.isEmpty {
-            guard let animal = animals[indexPath.section][indexPath.row] as? Animal else { return UITableViewCell() }
+            let animal = animals[indexPath.section][indexPath.row]
             cell.configure(with: animal)
         }
 
@@ -90,7 +85,6 @@ extension AnimalsViewController {
 extension AnimalsViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
         performSegue(withIdentifier: "showAnimal", sender: animals[indexPath.section][indexPath.row])
     }
 }
