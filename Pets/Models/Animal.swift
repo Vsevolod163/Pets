@@ -24,17 +24,17 @@ class PackAnimal: Animal {
 }
 
 class HomeAnimal: Animal {
-    private let type = "Home Animal"
+    private let type = "Home"
 }
 
 final class Horse: PackAnimal {
-   private let type = "Horse"
+    let animal = "Horse"
 }
 
 final class Camel: PackAnimal {
-    var hump: Int
-    private let type = "Camel"
-    
+    let hump: Int
+    let animal = "Camel"
+
     init(name: String, age: Int, color: String, commands: [String], hump: Int) {
         self.hump = hump
         super.init(name: name, age: age, color: color, commands: commands)
@@ -42,18 +42,18 @@ final class Camel: PackAnimal {
 }
 
 final class Goat: PackAnimal {
-    private let type = "Goat"
+    let animal = "Goat"
 }
 
 final class Cat: HomeAnimal {
-    private let type = "Cat"
+    let animal = "Cat"
 }
 
 final class Dog: HomeAnimal {
-    private let type = "Dog"
+    let animal = "Dog"
 }
 
 final class Hamster: HomeAnimal {
-    private let type = "Hamster"
+    let animal = "Hamster"
 }
 
