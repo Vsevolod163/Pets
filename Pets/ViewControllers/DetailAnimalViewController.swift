@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class DetailAnimalViewController: UIViewController {
 
@@ -13,14 +14,18 @@ final class DetailAnimalViewController: UIViewController {
     @IBOutlet var ageLabel: UILabel!
     @IBOutlet var colorLabel: UILabel!
     @IBOutlet var commandsLabel: UILabel!
+    @IBOutlet var petImageView: UIImageView!
     
     var animal: Animal!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let imageURL = URL(string: animal.photo)
+        
         nameLabel.text = "Name: \(animal.name)"
-        ageLabel.text = "Age: \(animal.age.formatted())"
+        ageLabel.text = "Age: \(animal.age)"
         colorLabel.text = "Color: \(animal.color)"
-        commandsLabel.text = "Commands: \(animal.commands.joined(separator: ", "))"
+        commandsLabel.text = "Commands: \(animal.commands)"
+        petImageView.kf.setImage(with: imageURL)
     }
 }
