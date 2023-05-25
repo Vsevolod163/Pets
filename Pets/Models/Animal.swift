@@ -7,15 +7,17 @@
 
 class Animal {
     var name: String
-    var age: Int
+    var age: String
     var color: String
-    var commands: [String]
+    var commands: String
+    var photo: String
     
-    init(name: String, age: Int, color: String, commands: [String]) {
+    init(name: String, age: String, color: String, commands: String, photo: String) {
         self.name = name
         self.age = age
         self.color = color
         self.commands = commands
+        self.photo = photo
     }
 }
 
@@ -32,13 +34,7 @@ final class Horse: PackAnimal {
 }
 
 final class Camel: PackAnimal {
-    let hump: Int
     let animal = "Camel"
-
-    init(name: String, age: Int, color: String, commands: [String], hump: Int) {
-        self.hump = hump
-        super.init(name: name, age: age, color: color, commands: commands)
-    }
 }
 
 final class Goat: PackAnimal {
