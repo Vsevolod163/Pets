@@ -6,50 +6,106 @@
 //
 
 class Animal {
-    let name: String
-    let age: String
-    let color: String
-    var commands: String
-    let photo: String
+    private let animalName: String
+    private let animalAge: String
+    private let animalColor: String
+    private var animalCommands: String
+    private let animalPhoto: String
     
-    init(name: String, age: String, color: String, commands: String, photo: String) {
-        self.name = name
-        self.age = age
-        self.color = color
-        self.commands = commands
-        self.photo = photo
+    var name: String {
+        animalName
     }
+    
+    var age: String {
+        animalAge
+    }
+    
+    var color: String {
+        animalColor
+    }
+    var commands: String {
+        get {
+            return animalCommands
+        }
+        set {
+            animalCommands = newValue
+        }
+    }
+    var photo: String {
+        animalPhoto
+    }
+    
+    init(animalName: String, animalAge: String, animalColor: String, animalCommands: String, animalPhoto: String) {
+        self.animalName = animalName
+        self.animalAge = animalAge
+        self.animalColor = animalColor
+        self.animalCommands = animalCommands
+        self.animalPhoto = animalPhoto
+    }
+    
 }
 
 class PackAnimal: Animal {
-    let type = "Pack"
+    private let animalType = "Pack"
+    
+    var type: String {
+        animalType
+    }
 }
 
 class HomeAnimal: Animal {
-    let type = "Home"
+    private let animalType = "Home"
+    
+    var type: String {
+        animalType
+    }
 }
 
 final class Horse: PackAnimal {
-    let animal = "Horse"
+    private let currentAnimal = "Horse"
+    
+    var animal: String {
+        currentAnimal
+    }
 }
 
 final class Camel: PackAnimal {
-    let animal = "Camel"
+    private let currentAnimal = "Camel"
+    
+    var animal: String {
+        currentAnimal
+    }
 }
 
 final class Goat: PackAnimal {
-    let animal = "Goat"
+    private let currentAnimal = "Goat"
+    
+    var animal: String {
+        currentAnimal
+    }
 }
 
 final class Cat: HomeAnimal {
-    let animal = "Cat"
+    private let currentAnimal = "Cat"
+    
+    var animal: String {
+        currentAnimal
+    }
 }
 
 final class Dog: HomeAnimal {
-    let animal = "Dog"
+    private let currentAnimal = "Dog"
+    
+    var animal: String {
+        currentAnimal
+    }
 }
 
 final class Hamster: HomeAnimal {
-    let animal = "Hamster"
+    private let currentAnimal = "Hamster"
+    
+    var animal: String {
+        currentAnimal
+    }
 }
 
