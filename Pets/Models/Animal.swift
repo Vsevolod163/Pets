@@ -23,6 +23,7 @@ class Animal {
     var color: String {
         animalColor
     }
+    
     var commands: String {
         get {
             return animalCommands
@@ -31,6 +32,7 @@ class Animal {
             animalCommands = newValue
         }
     }
+    
     var photo: String {
         animalPhoto
     }
