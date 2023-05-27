@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C604E7472A22928900700A1F /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C604E7462A22928900700A1F /* StorageManager.swift */; };
+		C604E7492A22929300700A1F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C604E7482A22929300700A1F /* DataManager.swift */; };
 		C66094FE2A1F727B00A21E47 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C66094FD2A1F727B00A21E47 /* Kingfisher */; };
 		C66095012A1F760700A21E47 /* PetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66095002A1F760700A21E47 /* PetTableViewCell.swift */; };
 		C69D3ACD2A1E9EB7001C2825 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69D3ACC2A1E9EB7001C2825 /* AppDelegate.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C604E7462A22928900700A1F /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		C604E7482A22929300700A1F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		C66095002A1F760700A21E47 /* PetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTableViewCell.swift; sourceTree = "<group>"; };
 		C69D3AC92A1E9EB7001C2825 /* Pets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C69D3ACC2A1E9EB7001C2825 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 		C69D3AE52A1E9F90001C2825 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				C604E7462A22928900700A1F /* StorageManager.swift */,
+				C604E7482A22929300700A1F /* DataManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -228,6 +234,8 @@
 				C69D3ACD2A1E9EB7001C2825 /* AppDelegate.swift in Sources */,
 				C66095012A1F760700A21E47 /* PetTableViewCell.swift in Sources */,
 				C69D3ACF2A1E9EB7001C2825 /* SceneDelegate.swift in Sources */,
+				C604E7492A22929300700A1F /* DataManager.swift in Sources */,
+				C604E7472A22928900700A1F /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
