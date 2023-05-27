@@ -5,12 +5,14 @@
 //  Created by Vsevolod Lashin on 24.05.2023.
 //
 
-class Animal {
-    private let animalName: String
-    private let animalAge: String
-    private let animalColor: String
-    private var animalCommands: String
-    private let animalPhoto: String
+import RealmSwift
+
+class Animal: Object {
+    @Persisted private var animalName: String
+    @Persisted private var animalAge: String
+    @Persisted private var animalColor: String
+    @Persisted private var animalCommands: String
+    @Persisted private var animalPhoto: String
     
     var name: String {
         animalName
