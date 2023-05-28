@@ -24,7 +24,6 @@ final class AnimalsViewController: UITableViewController {
                 animalCommands: "Eat",
                 animalPhoto: "https://cdnn21.img.ria.ru/images/07e4/0c/0a/1588644193_0:321:3071:2048_1280x0_80_0_0_3600040dd7b5ca5093de47c5785e525f.jpg")
         )
-        
     }
     
     // MARK: - Navigation
