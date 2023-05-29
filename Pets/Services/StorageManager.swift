@@ -20,13 +20,26 @@ final class StorageManager {
         }
     }
     
-    private func save(_ animals: [Animal]) {
+    func save(_ homeAnimals: [Animal], _ packAnimals: [Animal]) {
         write {
-            realm.add(animals)
+            realm.add(homeAnimals)
+            realm.add(packAnimals)
         }
     }
     
-    private func write(completion: () -> Void) {
+//    func save(_ animals: [HomeAnimal]) {
+//        write {
+//            realm.add(animals)
+//        }
+//    }
+//    
+//    func save(_ animals: [PackAnimal]) {
+//        write {
+//            realm.add(animals)
+//        }
+//    }
+    
+    func write(completion: () -> Void) {
         do {
             try realm.write {
                 completion()
