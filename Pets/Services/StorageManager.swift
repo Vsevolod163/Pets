@@ -22,7 +22,6 @@ final class StorageManager {
         
         return container
     }()
-    
     private let viewContext: NSManagedObjectContext
     
     private init() {

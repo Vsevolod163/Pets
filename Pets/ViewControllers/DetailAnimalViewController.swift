@@ -9,7 +9,8 @@ import UIKit
 import Kingfisher
 
 final class DetailAnimalViewController: UIViewController {
-
+    
+    // MARK: - IBOutlets
     @IBOutlet var animalLabel: UILabel!
     @IBOutlet var animalTypeLabel: UILabel!
     @IBOutlet var nameLabel: UILabel!
@@ -18,10 +19,13 @@ final class DetailAnimalViewController: UIViewController {
     @IBOutlet var commandsLabel: UILabel!
     @IBOutlet var petImageView: UIImageView!
     
+    // MARK: - Properties
     var animal: CurrentAnimal!
     
+    // MARK: - Private Properties
     private let storageManager = StorageManager.shared
     
+    // MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         let imageURL = URL(string: animal.photo ?? "")
@@ -35,10 +39,12 @@ final class DetailAnimalViewController: UIViewController {
         petImageView.kf.setImage(with: imageURL)
     }
     
+    // MARK: - IBActions
     @IBAction func addCommands() {
         showAlert(with: "Add commands", and: "What commands do you want to add?")
     }
 
+    // MARK: - Private functions
     private func showAlert(with title: String, and message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 

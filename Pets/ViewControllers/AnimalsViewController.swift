@@ -10,12 +10,14 @@ import Kingfisher
 
 final class AnimalsViewController: UITableViewController {
     
+    // MARK: - Private Properties
     private var animals: [CurrentAnimal] = []
     private let storageManager = StorageManager.shared
     
+    // MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+//        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         fetchData()
         tableView.rowHeight = 150
     }
@@ -65,6 +67,7 @@ final class AnimalsViewController: UITableViewController {
         )
     }
     
+    // MARK: - CoreData
     private func fetchData() {
         storageManager.fetchData { [weak self] result in
             switch result {

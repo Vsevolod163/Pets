@@ -15,7 +15,6 @@ final class PetTableViewCell: UITableViewCell {
     
     func configure(with pet: CurrentAnimal) {
         let imageURL = URL(string: pet.photo ?? "")
-            
         nameLabel.text = pet.name
         
         petImageView.kf.setImage(with: imageURL)
