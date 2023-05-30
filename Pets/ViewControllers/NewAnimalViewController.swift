@@ -13,9 +13,11 @@ final class NewAnimalViewController: UIViewController {
     @IBOutlet var doneButton: UIButton!
     @IBOutlet var pickerView: UIPickerView!
     
-    private let data = ["Cat", "Dog", "Hamster", "Horse", "Goat", "Camel"]
     var animal: Animal!
     var chosenAnimal: String!
+    
+    private let data = ["Cat", "Dog", "Hamster", "Horse", "Goat", "Camel"]
+    private let storageManager = StorageManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,6 +102,38 @@ final class NewAnimalViewController: UIViewController {
                 animalPhoto: subviews[4].text ?? ""
             )
         }
+        
+        var animalType = ""
+        var animalKind = ""
+        
+        if let currentAnimal = animal as? Cat {
+            animalType = currentAnimal.type
+            animalKind = currentAnimal.animal
+        } else if let currentAnimal = animal as? Dog {
+            animalType = currentAnimal.type
+            animalKind = currentAnimal.animal
+        } else if let currentAnimal = animal as? Hamster {
+            animalType = currentAnimal.type
+            animalKind = currentAnimal.animal
+        } else if let currentAnimal = animal as? Horse {
+            animalType = currentAnimal.type
+            animalKind = currentAnimal.animal
+        } else if let currentAnimal = animal as? Goat {
+            animalType = currentAnimal.type
+            animalKind = currentAnimal.animal
+        } else if let currentAnimal = animal as? Camel {
+            animalType = currentAnimal.type
+            animalKind = currentAnimal.animal
+        }
+        
+        storageManager.create(
+            name: animal.name,
+            age: animal.age,
+            color: animal.color,
+            commands: animal.commands,
+            photo: animal.photo,
+            type: animalType,
+            kind: animalKind)
         
         dismiss(animated: true)
     }
