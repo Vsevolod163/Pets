@@ -67,7 +67,6 @@ final class NewAnimalViewController: UIViewController {
                 animalCommands: subviews[3].text ?? "",
                 animalPhoto: subviews[4].text ?? ""
             )
-            print(1)
         } else if chosenAnimal == "Hamster" {
             animal = Hamster(
                 animalName: subviews[0].text ?? "",

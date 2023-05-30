@@ -13,8 +13,8 @@ final class PetTableViewCell: UITableViewCell {
     @IBOutlet var petImageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!
     
-    func configure(with pet: Animal) {
-        let imageURL = URL(string: pet.photo)
+    func configure(with pet: CurrentAnimal) {
+        let imageURL = URL(string: pet.photo ?? "")
             
         nameLabel.text = pet.name
         
