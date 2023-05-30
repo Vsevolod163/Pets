@@ -8,6 +8,10 @@
 import UIKit
 import Kingfisher
 
+protocol EditAnimalViewControllerDelegate: AnyObject {
+    func updateUI()
+}
+
 final class DetailAnimalViewController: UIViewController {
     
     // MARK: - IBOutlets
@@ -28,6 +32,17 @@ final class DetailAnimalViewController: UIViewController {
     // MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateDetailUI()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let editVC = segue.destination as? EditAnimalViewController else { return }
+        
+        editVC.animal = animal
+        editVC.delegate = self
+    }
+    
+    private func updateDetailUI() {
         let imageURL = URL(string: animal.photo ?? "")
         
         animalLabel.text = "Animal: \(animal.kind ?? "")"
@@ -38,35 +53,10 @@ final class DetailAnimalViewController: UIViewController {
         commandsLabel.text = "Commands: \(animal.commands ?? "")"
         petImageView.kf.setImage(with: imageURL)
     }
-    
-    // MARK: - IBActions
-    @IBAction func addCommands() {
-        showAlert(with: "Add commands", and: "What commands do you want to add?")
-    }
+}
 
-    // MARK: - Private functions
-    private func showAlert(with title: String, and message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-
-        alert.addTextField()
-        alert.textFields?.first?.text = animal.commands
-        
-        let saveAction = UIAlertAction(title: "Save", style: .default) { [weak self] _ in
-            guard let commands = alert.textFields?.first?.text else { return }
-            guard !commands.isEmpty else { return }
-            
-            self?.animal.commands = commands
-            self?.commandsLabel.text = "Commands: \(self?.animal.commands ?? "")"
-            self?.storageManager.update(self?.animal ?? CurrentAnimal(), newCommands: commands)
-        }
-
-        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { [weak self] _ in
-            self?.dismiss(animated: true)
-        }
-
-        alert.addAction(saveAction)
-        alert.addAction(cancelAction)
-
-        present(alert, animated: true)
+extension DetailAnimalViewController: EditAnimalViewControllerDelegate {
+    func updateUI() {
+        updateDetailUI()
     }
 }
