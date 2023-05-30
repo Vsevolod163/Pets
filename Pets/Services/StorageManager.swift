@@ -20,10 +20,9 @@ final class StorageManager {
         }
     }
     
-    func save(_ homeAnimals: [Animal], _ packAnimals: [Animal]) {
+    func save(_ animals: [AnimalList]) {
         write {
-            realm.add(homeAnimals)
-            realm.add(packAnimals)
+            realm.add(animals)
         }
     }
     

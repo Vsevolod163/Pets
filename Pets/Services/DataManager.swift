@@ -14,28 +14,28 @@ final class DataManager {
     private init() {}
 
     func createTempData(completion: @escaping () -> Void) {
-        var homeAnimalsList: [Animal] = []
-        var packAnimalsList: [Animal] = []
+        let homeAnimalsList = AnimalList()
+        let packAnimalsList = AnimalList()
         
-        let cat = HomeAnimal()
+        let cat = Animal()
         cat.name = "Sara"
         cat.age = "2"
         cat.color = "gray"
         cat.commands = "play"
         cat.photo = ""
         
-        let horse = PackAnimal()
+        let horse = Animal()
         cat.name = "L"
         cat.age = "1"
         cat.color = "white"
         cat.commands = "forward"
         cat.photo = ""
         
-        homeAnimalsList.append(cat)
-        packAnimalsList.append(horse)
+        homeAnimalsList.animals.append(cat)
+        packAnimalsList.animals.append(horse)
         
         DispatchQueue.main.async { [unowned self] in
-            storageManager.save(homeAnimalsList, packAnimalsList)
+            storageManager.save([homeAnimalsList, packAnimalsList])
             completion()
         }
     }

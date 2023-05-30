@@ -7,6 +7,27 @@
 
 import RealmSwift
 
+final class AnimalList: Object {
+    @Persisted private var title: String
+    @Persisted private var animals = List<Animal>()
+    
+    var animalsTitle: String {
+        get {
+            title
+        } set {
+            title = newValue
+        }
+    }
+    
+    var animalsList: List<Animal> {
+        get {
+            animals
+        } set {
+            animals = newValue
+        }
+    }
+}
+
 class Animal: Object {
     @Persisted private var animalName: String
     @Persisted private var animalAge: String
@@ -21,7 +42,7 @@ class Animal: Object {
             animalName = newValue
         }
     }
-
+    
     var age: String {
         get {
             animalAge
@@ -29,7 +50,7 @@ class Animal: Object {
             animalAge = newValue
         }
     }
-
+    
     var color: String {
         get {
             animalColor
@@ -37,7 +58,7 @@ class Animal: Object {
             animalColor = newValue
         }
     }
-
+    
     var commands: String {
         get {
             animalCommands
@@ -46,7 +67,7 @@ class Animal: Object {
             animalCommands = newValue
         }
     }
-
+    
     var photo: String {
         get {
             animalPhoto
@@ -54,17 +75,8 @@ class Animal: Object {
             animalPhoto = newValue
         }
     }
-//
-//    init(animalName: String, animalAge: String, animalColor: String, animalCommands: String, animalPhoto: String) {
-//        self.animalName = animalName
-//        self.animalAge = animalAge
-//        self.animalColor = animalColor
-//        self.animalCommands = animalCommands
-//        self.animalPhoto = animalPhoto
-//    }
-    
 }
-//
+
 class PackAnimal: Animal {
     private let animalType = "Pack"
 
@@ -128,4 +140,3 @@ final class Hamster: HomeAnimal {
         currentAnimal
     }
 }
-
