@@ -20,6 +20,7 @@
 		C69D3AF02A1EAF59001C2825 /* DetailAnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69D3AEF2A1EAF59001C2825 /* DetailAnimalViewController.swift */; };
 		C69D3AF22A1EB3EC001C2825 /* NewAnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69D3AF12A1EB3EC001C2825 /* NewAnimalViewController.swift */; };
 		C6A432B02A26138400CD96B9 /* AnimalList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C6A432AE2A26138400CD96B9 /* AnimalList.xcdatamodeld */; };
+		C6EB060F2A263B18003B9D73 /* EditAnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EB060E2A263B18003B9D73 /* EditAnimalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		C69D3AEF2A1EAF59001C2825 /* DetailAnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAnimalViewController.swift; sourceTree = "<group>"; };
 		C69D3AF12A1EB3EC001C2825 /* NewAnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAnimalViewController.swift; sourceTree = "<group>"; };
 		C6A432AF2A26138400CD96B9 /* AnimalList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AnimalList.xcdatamodel; sourceTree = "<group>"; };
+		C6EB060E2A263B18003B9D73 /* EditAnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAnimalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				C69D3AED2A1EAF39001C2825 /* AnimalsViewController.swift */,
 				C69D3AEF2A1EAF59001C2825 /* DetailAnimalViewController.swift */,
 				C69D3AF12A1EB3EC001C2825 /* NewAnimalViewController.swift */,
+				C6EB060E2A263B18003B9D73 /* EditAnimalViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				C6A432B02A26138400CD96B9 /* AnimalList.xcdatamodeld in Sources */,
 				C66095012A1F760700A21E47 /* PetTableViewCell.swift in Sources */,
 				C69D3ACF2A1E9EB7001C2825 /* SceneDelegate.swift in Sources */,
+				C6EB060F2A263B18003B9D73 /* EditAnimalViewController.swift in Sources */,
 				C604E7472A22928900700A1F /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

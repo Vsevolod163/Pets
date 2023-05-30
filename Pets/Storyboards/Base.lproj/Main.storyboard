@@ -152,7 +152,7 @@
                     <navigationItem key="navigationItem" title="Details" id="r4U-IS-g7Y">
                         <barButtonItem key="rightBarButtonItem" image="pencil" catalog="system" id="bZ1-Sl-jlN">
                             <connections>
-                                <action selector="addCommands" destination="0mY-V4-flC" id="QQL-3l-XkU"/>
+                                <segue destination="POR-8m-OFB" kind="presentation" id="hcS-nl-4Zo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -169,6 +169,103 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dzR-Uy-s7Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="652.5" y="461.61971830985914"/>
+        </scene>
+        <!--Edit-->
+        <scene sceneID="CgT-DQ-r40">
+            <objects>
+                <viewController id="POR-8m-OFB" customClass="EditAnimalViewController" customModule="Pets" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VY6-jT-0TM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wDB-O2-ESZ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
+                                <items>
+                                    <navigationItem title="Edit" id="1Uu-nI-jo5">
+                                        <barButtonItem key="leftBarButtonItem" image="chevron.down" catalog="system" id="YxN-wn-zUz">
+                                            <connections>
+                                                <action selector="closeButtonPressed:" destination="POR-8m-OFB" id="BBQ-EQ-ypC"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyj-BY-9sV">
+                                <rect key="frame" x="85" y="430.5" width="150" height="33.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Done"/>
+                                <connections>
+                                    <action selector="doneButtonPressed" destination="POR-8m-OFB" eventType="touchUpInside" id="8G8-4Y-GJ8"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Pe-Vh-S5Y">
+                                <rect key="frame" x="16" y="322.5" width="288" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="ZQ3-w1-97A"/>
+                                </constraints>
+                            </pickerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Z3O-Q6-eAk">
+                                <rect key="frame" x="16" y="112.5" width="288" height="202"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5MJ-cB-xwM">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9r4-Wb-4BQ">
+                                        <rect key="frame" x="0.0" y="42" width="288" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Color" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vyt-s6-Pps">
+                                        <rect key="frame" x="0.0" y="84" width="288" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Commands" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xNM-3X-HNo">
+                                        <rect key="frame" x="0.0" y="126" width="288" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Photo URL" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Awj-Y6-eMh">
+                                        <rect key="frame" x="0.0" y="168" width="288" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="h9K-Ee-zQc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="h9K-Ee-zQc" firstAttribute="trailing" secondItem="Z3O-Q6-eAk" secondAttribute="trailing" constant="16" id="4Nf-t6-BeC"/>
+                            <constraint firstItem="lyj-BY-9sV" firstAttribute="width" secondItem="VY6-jT-0TM" secondAttribute="width" multiplier="0.46875" id="5XA-T8-5Io"/>
+                            <constraint firstItem="wDB-O2-ESZ" firstAttribute="trailing" secondItem="h9K-Ee-zQc" secondAttribute="trailing" id="CNE-8t-2cj"/>
+                            <constraint firstItem="9Pe-Vh-S5Y" firstAttribute="top" secondItem="Z3O-Q6-eAk" secondAttribute="bottom" constant="8" id="CWX-v1-At8"/>
+                            <constraint firstItem="h9K-Ee-zQc" firstAttribute="trailing" secondItem="9Pe-Vh-S5Y" secondAttribute="trailing" constant="16" id="EXJ-2y-5fC"/>
+                            <constraint firstItem="Z3O-Q6-eAk" firstAttribute="leading" secondItem="h9K-Ee-zQc" secondAttribute="leading" constant="16" id="Lbh-8G-B6g"/>
+                            <constraint firstItem="lyj-BY-9sV" firstAttribute="height" secondItem="VY6-jT-0TM" secondAttribute="height" multiplier="0.0607394" id="Nxv-vd-cYW"/>
+                            <constraint firstItem="Z3O-Q6-eAk" firstAttribute="top" secondItem="wDB-O2-ESZ" secondAttribute="bottom" constant="8" id="Osc-5K-JSp"/>
+                            <constraint firstItem="lyj-BY-9sV" firstAttribute="centerX" secondItem="VY6-jT-0TM" secondAttribute="centerX" id="gVk-lW-7sJ"/>
+                            <constraint firstItem="wDB-O2-ESZ" firstAttribute="leading" secondItem="h9K-Ee-zQc" secondAttribute="leading" id="i8v-QX-L84"/>
+                            <constraint firstItem="lyj-BY-9sV" firstAttribute="top" secondItem="9Pe-Vh-S5Y" secondAttribute="bottom" constant="8" id="u1e-jz-Me6"/>
+                            <constraint firstItem="wDB-O2-ESZ" firstAttribute="top" secondItem="h9K-Ee-zQc" secondAttribute="top" id="wUN-mW-oCX"/>
+                            <constraint firstItem="9Pe-Vh-S5Y" firstAttribute="leading" secondItem="h9K-Ee-zQc" secondAttribute="leading" constant="16" id="z3u-Ab-ALO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit" id="Jh8-55-2xE"/>
+                    <connections>
+                        <outlet property="ageTF" destination="9r4-Wb-4BQ" id="VfX-jB-SVW"/>
+                        <outlet property="animalPickerView" destination="9Pe-Vh-S5Y" id="cvR-hp-0og"/>
+                        <outlet property="colorTF" destination="vyt-s6-Pps" id="wQT-oF-jxW"/>
+                        <outlet property="commandsTF" destination="xNM-3X-HNo" id="D2o-qr-SAw"/>
+                        <outlet property="nameTF" destination="5MJ-cB-xwM" id="FEt-qt-3Nm"/>
+                        <outlet property="photoTF" destination="Awj-Y6-eMh" id="52N-Xy-s4i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WG6-p5-Srw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1399" y="462"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="O9t-Br-HjL">
@@ -270,6 +367,7 @@
     </scenes>
     <resources>
         <image name="cat" width="1150" height="647"/>
+        <image name="chevron.down" catalog="system" width="128" height="70"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
