@@ -13,7 +13,7 @@ final class StorageManager {
     
     // MARK: - Core Data stack
     private let persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "TaskList")
+        let container = NSPersistentContainer(name: "AnimalList")
         container.loadPersistentStores { _, error in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
@@ -30,9 +30,17 @@ final class StorageManager {
     }
     
     // MARK: - CRUD
-    func create(_ animalName: String, completion: (CurrentAnimal) -> Void) {
+    func create(name: String, age: String, color: String, commands: String, photo: String, type: String, kind: String, completion: (CurrentAnimal) -> Void) {
         let animal = CurrentAnimal(context: viewContext)
-        animal.name = animalName
+        
+        animal.name = name
+        animal.age = age
+        animal.color = color
+        animal.commands = commands
+        animal.photo = photo
+        animal.type = type
+        animal.kind = kind
+        
         completion(animal)
         saveContext()
     }
@@ -48,8 +56,8 @@ final class StorageManager {
         }
     }
     
-    func update(_ animal: CurrentAnimal, newName: String) {
-        animal.name = newName
+    func update(_ animal: CurrentAnimal, newCommands: String) {
+        animal.commands = newCommands
         saveContext()
     }
     
