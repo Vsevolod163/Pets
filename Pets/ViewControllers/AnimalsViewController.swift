@@ -111,6 +111,7 @@ extension AnimalsViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            storageManager.delete(animals[indexPath.row])
             animals.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
