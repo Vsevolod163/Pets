@@ -15,6 +15,11 @@ final class AnimalsViewController: UITableViewController {
     private let storageManager = StorageManager.shared
     
     // MARK: - View life cycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
@@ -30,41 +35,8 @@ final class AnimalsViewController: UITableViewController {
     }
 
     @IBAction func unwind(for segue: UIStoryboardSegue) {
-        guard let newAnimalVC = segue.source as? NewAnimalViewController else { return }
-        guard let animal = newAnimalVC.animal else { return }
-        
-        var animalType = ""
-        var animalKind = ""
-        
-        if let currentAnimal = animal as? Cat {
-            animalType = currentAnimal.type
-            animalKind = currentAnimal.animal
-        } else if let currentAnimal = animal as? Dog {
-            animalType = currentAnimal.type
-            animalKind = currentAnimal.animal
-        } else if let currentAnimal = animal as? Hamster {
-            animalType = currentAnimal.type
-            animalKind = currentAnimal.animal
-        } else if let currentAnimal = animal as? Horse {
-            animalType = currentAnimal.type
-            animalKind = currentAnimal.animal
-        } else if let currentAnimal = animal as? Goat {
-            animalType = currentAnimal.type
-            animalKind = currentAnimal.animal
-        } else if let currentAnimal = animal as? Camel {
-            animalType = currentAnimal.type
-            animalKind = currentAnimal.animal
-        }
-        
-        save(
-            name: animal.name,
-            age: animal.age,
-            color: animal.color,
-            commands: animal.commands,
-            photo: animal.photo,
-            type: animalType,
-            kind: animalKind
-        )
+        fetchData()
+        tableView.reloadData()
     }
     
     // MARK: - CoreData
@@ -76,16 +48,6 @@ final class AnimalsViewController: UITableViewController {
             case .failure(let error):
                 print(error.localizedDescription)
             }
-        }
-    }
-    
-    private func save(name: String, age: String, color: String, commands: String, photo: String, type: String, kind: String) {
-        storageManager.create(name: name, age: age, color: color, commands: commands, photo: photo, type: type, kind: kind) { animal in
-            animals.append(animal)
-            tableView.insertRows(
-                at: [IndexPath(row: animals.count - 1, section: 0)],
-                with: .automatic
-            )
         }
     }
 }
