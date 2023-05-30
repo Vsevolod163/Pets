@@ -4,7 +4,9 @@
         <attribute name="age" attributeType="String"/>
         <attribute name="color" attributeType="String"/>
         <attribute name="commands" attributeType="String"/>
+        <attribute name="kind" optional="YES" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="photo" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
     </entity>
 </model>
