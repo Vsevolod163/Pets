@@ -87,7 +87,6 @@
 				C69D3AE52A1E9F90001C2825 /* Services */,
 				C69D3AE02A1E9F65001C2825 /* App */,
 				C69D3AE12A1E9F6D001C2825 /* Sources */,
-				C6A432AE2A26138400CD96B9 /* AnimalList.xcdatamodeld */,
 			);
 			path = Pets;
 			sourceTree = "<group>";
@@ -134,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				C69D3AEB2A1EA348001C2825 /* Animal.swift */,
+				C6A432AE2A26138400CD96B9 /* AnimalList.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
