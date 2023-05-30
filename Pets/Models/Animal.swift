@@ -5,35 +5,12 @@
 //  Created by Vsevolod Lashin on 24.05.2023.
 //
 
-import RealmSwift
-
-final class AnimalList: Object {
-    @Persisted private var title: String
-    @Persisted private var animals = List<Animal>()
-    
-    var animalsTitle: String {
-        get {
-            title
-        } set {
-            title = newValue
-        }
-    }
-    
-    var animalsList: List<Animal> {
-        get {
-            animals
-        } set {
-            animals = newValue
-        }
-    }
-}
-
-class Animal: Object {
-    @Persisted private var animalName: String
-    @Persisted private var animalAge: String
-    @Persisted private var animalColor: String
-    @Persisted private var animalCommands: String
-    @Persisted private var animalPhoto: String
+class Animal {
+    private var animalName: String
+    private var animalAge: String
+    private var animalColor: String
+    private var animalCommands: String
+    private var animalPhoto: String
     
     var name: String {
         get {
@@ -74,6 +51,14 @@ class Animal: Object {
         } set {
             animalPhoto = newValue
         }
+    }
+    
+    init(animalName: String, animalAge: String, animalColor: String, animalCommands: String, animalPhoto: String) {
+        self.animalName = animalName
+        self.animalAge = animalAge
+        self.animalColor = animalColor
+        self.animalCommands = animalCommands
+        self.animalPhoto = animalPhoto
     }
 }
 
