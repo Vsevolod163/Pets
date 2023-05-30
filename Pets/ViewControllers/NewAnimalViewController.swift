@@ -21,32 +21,8 @@ final class NewAnimalViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        doneButton.isEnabled = false
-        guard let subviews = dataTFStackView.arrangedSubviews as? [UITextField] else { return }
-        
-        var isAllFieldsFilled: Bool {
-            for subview in subviews {
-                guard let text = subview.text else {
-                    continue
-                }
-                if text.isEmpty {
-                    return false
-                }
-            }
-            return true
-        }
-        
-        for subview in subviews {
-            let action = UIAction { [weak self] _ in
-                self?.doneButton.isEnabled = isAllFieldsFilled
-            }
-            subview.addAction(action, for: .editingChanged)
-        }
-        
-        pickerView.delegate = self
-        pickerView.dataSource = self
-        pickerView.selectRow(2, inComponent: 0, animated: false)
-        chosenAnimal = data[2]
+        updateTFStackViewUI()
+        updatePickerViewUI()
     }
     
     @IBAction func doneButtonTapped() {
@@ -136,6 +112,37 @@ final class NewAnimalViewController: UIViewController {
             kind: animalKind)
         
         dismiss(animated: true)
+    }
+    
+    private func updateTFStackViewUI() {
+        doneButton.isEnabled = false
+        guard let subviews = dataTFStackView.arrangedSubviews as? [UITextField] else { return }
+        
+        var isAllFieldsFilled: Bool {
+            for subview in subviews {
+                guard let text = subview.text else {
+                    continue
+                }
+                if text.isEmpty {
+                    return false
+                }
+            }
+            return true
+        }
+        
+        for subview in subviews {
+            let action = UIAction { [weak self] _ in
+                self?.doneButton.isEnabled = isAllFieldsFilled
+            }
+            subview.addAction(action, for: .editingChanged)
+        }
+    }
+    
+    private func updatePickerViewUI() {
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        pickerView.selectRow(2, inComponent: 0, animated: false)
+        chosenAnimal = data[2]
     }
 }
 
