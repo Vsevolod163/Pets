@@ -21,7 +21,7 @@ final class EditAnimalViewController: UIViewController {
     unowned var delegate: EditAnimalViewControllerDelegate!
     
     private let storageManager = StorageManager.shared
-    private let data = ["Cat", "Dog", "Hamster", "Horse", "Goat", "Camel"]
+    private let animals = ["Cat", "Dog", "Hamster", "Horse", "Goat", "Camel"]
     private var chosenAnimal: String!
     
     override func viewDidLoad() {
@@ -29,7 +29,7 @@ final class EditAnimalViewController: UIViewController {
         updateUI()
         animalPickerView.delegate = self
         animalPickerView.dataSource = self
-        animalPickerView.selectRow(data.firstIndex(of: animal.kind ?? "") ?? 0, inComponent: 0, animated: false)
+        animalPickerView.selectRow(animals.firstIndex(of: animal.kind ?? "") ?? 0, inComponent: 0, animated: false)
         chosenAnimal = animal.kind
     }
     
@@ -76,15 +76,15 @@ extension EditAnimalViewController: UIPickerViewDelegate, UIPickerViewDataSource
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        data.count
+        animals.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        data[row]
+        animals[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        chosenAnimal = data[row]
+        chosenAnimal = animals[row]
     }
     
 }

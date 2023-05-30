@@ -16,8 +16,8 @@ final class NewAnimalViewController: UIViewController {
     var animal: Animal!
     var chosenAnimal: String!
     
-    private let data = ["Cat", "Dog", "Hamster", "Horse", "Goat", "Camel"]
     private let storageManager = StorageManager.shared
+    private let animals = ["Cat", "Dog", "Hamster", "Horse", "Goat", "Camel"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -142,7 +142,7 @@ final class NewAnimalViewController: UIViewController {
         pickerView.delegate = self
         pickerView.dataSource = self
         pickerView.selectRow(2, inComponent: 0, animated: false)
-        chosenAnimal = data[2]
+        chosenAnimal = animals[2]
     }
 }
 
@@ -153,15 +153,15 @@ extension NewAnimalViewController: UIPickerViewDelegate, UIPickerViewDataSource 
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return data.count
+        return animals.count
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return data[row]
+        return animals[row]
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        chosenAnimal = data[row]
+        chosenAnimal = animals[row]
     }
 }
 
