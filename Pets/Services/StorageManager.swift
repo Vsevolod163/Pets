@@ -29,7 +29,7 @@ final class StorageManager {
     }
     
     // MARK: - CRUD
-    func create(name: String, age: String, color: String, commands: String, photo: String, type: String, kind: String, completion: (CurrentAnimal) -> Void) {
+    func create(name: String, age: String, color: String, commands: String, photo: String, type: String, kind: String) {
         let animal = CurrentAnimal(context: viewContext)
         
         animal.name = name
@@ -40,7 +40,6 @@ final class StorageManager {
         animal.type = type
         animal.kind = kind
         
-        completion(animal)
         saveContext()
     }
     
@@ -55,8 +54,15 @@ final class StorageManager {
         }
     }
     
-    func update(_ animal: CurrentAnimal, newCommands: String) {
-        animal.commands = newCommands
+    func update(_ animal: CurrentAnimal, name: String, age: String, color: String, commands: String, photo: String, type: String, kind: String) {
+        animal.name = name
+        animal.age = age
+        animal.color = color
+        animal.commands = commands
+        animal.photo = photo
+        animal.type = type
+        animal.kind = kind
+       
         saveContext()
     }
     
